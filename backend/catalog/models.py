@@ -10,6 +10,11 @@ class Category(models.Model) :
         indexes = [
             models.Index(fields=["slug"])
         ]
+        
+class Brand(models.Model) :
+    name = models.CharField(max_length=255 , unique=True)
+    logo = models.ImageField(upload_to="images/")
+    description = models.TextField()
 class Product(models.Model):
     name = models.CharField(max_length=255)
     category = models.ForeignKey(Category , on_delete=models.PROTECT)
