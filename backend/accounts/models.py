@@ -6,7 +6,7 @@ from .managers import CustomUserManager
 
 class User (AbstractBaseUser , PermissionsMixin) :
     email =  models.EmailField(unique=True)
-    phone_number = models.CharField(max_length=11 ,  unique=True)
+    phone_number = models.CharField(max_length=15 ,  unique=True)
     user_fullname = models.CharField(max_length=150)
     
     is_active = models.BooleanField(default=True)
@@ -21,4 +21,3 @@ class User (AbstractBaseUser , PermissionsMixin) :
     def __str__(self):
         return self.email
     
-
